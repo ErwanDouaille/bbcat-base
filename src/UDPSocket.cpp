@@ -1,4 +1,4 @@
-
+#include <winsock2.h>
 #include <string.h>
 
 #include "OSCompiler.h"
@@ -8,11 +8,6 @@
 #ifndef COMPILER_MSVC
 #include <sys/param.h>
 #include <unistd.h>
-#include <sys/select.h>
-#include <netinet/in.h>
-#include <netinet/tcp.h>
-#include <arpa/inet.h>
-#include <netdb.h>
 #endif
 
 #include <limits.h>

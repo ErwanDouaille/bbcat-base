@@ -1,4 +1,4 @@
-
+#define __USE_MINGW_ANSI_STDIO 1
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -441,7 +441,6 @@ void Printf(std::string& str, const char *fmt, ...)
   va_end(ap);
 }
 
-#ifdef COMPILER_MSVC
 /*--------------------------------------------------------------------------------*/
 /** vasprintf doesn't exist in Windows
  */
@@ -459,7 +458,6 @@ int vasprintf(char **buf, const char *fmt, va_list ap)
   }
   return l;
 }
-#endif
 
 /*--------------------------------------------------------------------------------*/
 /** vprintf for std::string
@@ -612,13 +610,13 @@ StringStream& StringStream::operator << (ulong_t n)
 
 StringStream& StringStream::operator << (sllong_t n)
 {
-  Printf(data, "%lld", n);
+  Printf(data, "%I64d", n);
   return *this;
 }
 
 StringStream& StringStream::operator << (ullong_t n)
 {
-  Printf(data, "%llu", n);
+  Printf(data, "%I64u", n);
   return *this;
 }
 
