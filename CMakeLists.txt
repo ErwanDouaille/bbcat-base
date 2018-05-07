@@ -116,7 +116,7 @@ link_directories(${GLOBAL_LIB_DIRS})
 # sources are contained in the src/ directory
 ADD_SUBDIRECTORY( src )
 
-ADD_SUBDIRECTORY( test )
+#ADD_SUBDIRECTORY( test )
 
 ################################################################################
 # install files for 'share'
